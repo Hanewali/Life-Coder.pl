@@ -6,27 +6,7 @@
       check out the
       <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
     </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
+    <button class="btn btn-primary" @click="requ">Make a request!</button>
   </div>
 </template>
 
@@ -35,6 +15,40 @@ export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  methods: {
+    requ(){
+      console.log('dupa');
+      const request = require('request');
+
+      const options = {
+        url: 'https://api.cloudflare.com/client/v4/zones/8248231716cb84721a509111e1c2c6b3/purge_cache',
+        method: 'POST',
+        headers: {
+          'X-Auth-Email' : 'jakub@rumpel.pl',
+          'X-Auth-Key' : '124881f3b6e05aba6bd24b90d61ff70bdd536'
+        },
+        body: {
+          'purge_everything': true
+        }
+
+      }
+
+      request(options, 
+      function(error, response, body){
+        console.log(error);
+        console.log(response);
+        console.log(body);
+        // if(!error && response.statusCode == 200){
+        // 	console.log('Succesfuly cleared cloudFlare cache');
+        // 	callback(null, {statusCode: 200});
+        // } else {
+        // 	console.log('There was an error during cloudFlare cache clearing');
+        // 	callback(error, { statusCode: response.statusCode, body: body});
+        // }
+      });
+    }
+
   }
 }
 </script>
