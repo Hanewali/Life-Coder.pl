@@ -26,7 +26,7 @@ export default {
         method: 'POST',
         headers: {
           'X-Auth-Email' : 'jakub@rumpel.pl',
-          'X-Auth-Key' : '124881f3b6e05aba6bd24b90d61ff70bdd536'
+          'X-Auth-Key' : '9zQG3k2mhSv6FTazF5qMXWpMQNrO-xvJjkxvRC77'
         },
         body: {
           'purge_everything': true
