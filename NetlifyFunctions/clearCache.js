@@ -8,4 +8,6 @@ exports.handler = function(event, context, callback){
 	console.log("Netlify Env: ", apikey);
 
 	console.log("payload", payload);
+
+	callback(null, {statusCode: 200});
 }
