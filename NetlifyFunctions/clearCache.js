@@ -20,12 +20,15 @@ exports.handler = function(event, context, callback){
 
 	request(options, 
 	function(error, response, body){
-		if(!error && response.statusCode == 200){
-			console.log('Succesfuly cleared cloudFlare cache');
-			callback(null, {statusCode: 200});
-		} else {
-			console.log('There was an error during cloudFlare cache clearing');
-			callback(error, { statusCode: response.statusCode, body: body});
-		}
+		console.log(error);
+		console.log(response);
+		console.log(body);
+		// if(!error && response.statusCode == 200){
+		// 	console.log('Succesfuly cleared cloudFlare cache');
+		// 	callback(null, {statusCode: 200});
+		// } else {
+		// 	console.log('There was an error during cloudFlare cache clearing');
+		// 	callback(error, { statusCode: response.statusCode, body: body});
+		// }
 	});
 }
