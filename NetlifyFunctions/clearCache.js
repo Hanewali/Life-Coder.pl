@@ -18,11 +18,9 @@ exports.handler = function(event, context, callback){
 
 	}
 
-	
-
 	request(options, 
 	function(error, response, body){
-		if(!error, && response.statusCode == 200){
+		if(!error && response.statusCode == 200){
 			console.log('Succesfuly cleared cloudFlare cache');
 			callback(null, {statusCode: 200});
 		} else {
