@@ -18,36 +18,41 @@ export default {
   },
   methods: {
     requ(){
-      console.log('dupa');
-      const request = require('request');
+      const https = require('https');
+
+      // const { CLOUDFLARE_API_KEY: apikey } = process.env;
+      
+      var apikey = '9zQG3k2mhSv6FTazF5qMXWpMQNrO-xvJjkxvRC77'
+      const data = JSON.stringify({
+        'purge_everything': true
+      });
 
       const options = {
-        url: 'https://api.cloudflare.com/client/v4/zones/8248231716cb84721a509111e1c2c6b3/purge_cache',
+        hostname: 'api.cloudflare.com/client/v4/zones/8248231716cb84721a509111e1c2c6b3/purge_cache',
+        port: 443,
         method: 'POST',
-        mode: 'no-cors',
         headers: {
+          'Content-Type': 'application/json',
+          'Content-Length': data.length,
           'X-Auth-Email' : 'jakub@rumpel.pl',
-          'X-Auth-Key' : '9zQG3k2mhSv6FTazF5qMXWpMQNrO-xvJjkxvRC77'
-        },
-        body: {
-          'purge_everything': true
+          'X-Auth-Key' : apikey
         }
+      };
 
-      }
+      const req = https.request(options, res => {
+        console.log('statusCode: ${res.statusCode}')
 
-      request(options, 
-      function(error, response, body){
+        res.on('data', d => {
+          console.log(d);
+        })
+      })
+
+      req.on('error', error => {
         console.log(error);
-        console.log(response);
-        console.log(body);
-        // if(!error && response.statusCode == 200){
-        // 	console.log('Succesfuly cleared cloudFlare cache');
-        // 	callback(null, {statusCode: 200});
-        // } else {
-        // 	console.log('There was an error during cloudFlare cache clearing');
-        // 	callback(error, { statusCode: response.statusCode, body: body});
-        // }
-      });
+      })
+
+      req.write(data);
+      req.end();
     }
 
   }
