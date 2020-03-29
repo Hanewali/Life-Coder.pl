@@ -1,16 +1,4 @@
-[[headers]]
-  for="/*"
-  [[headers.values]]
-    Cache-Control = "public, s-max-age=604800"
-[[headers]]
-  for = "/img/*"
-  [headers.values]
-    Cache-Control = "public, s-max-age=604800"
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, s-max-age=604800"
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, s-max-age=604800"
+[[redirects]]
+	from = "https://lifecoder.netlify.com"
+	to = "https://life-coder.pl"
+	status = 302
