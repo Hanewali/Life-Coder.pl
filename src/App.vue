@@ -1,18 +1,19 @@
 <template>
   <div id="app">
     <app-header></app-header>
-    <img alt="Vue logo" src="./assets/icon.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <app-git-presentation></app-git-presentation>
   </div>
 </template>
 
 <script>
 import Header from './components/shared/Header'
+import GitPresentation from './components/GitPresentation.md'
 
 export default {
   name: 'App',
   components: {
-    appHeader: Header
+    appHeader: Header,
+    appGitPresentation: GitPresentation
   }
 }
 </script>
@@ -22,7 +23,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 </style>
