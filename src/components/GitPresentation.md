@@ -1,6 +1,6 @@
 # Git Presentation
 
-Prezentacja na temat Gita musi być na tyle prosta, na ile to tylko możliwe. Bardzo ważne będzie przedstawienie zalet Gita, porównać go z SVNem, i wypunktować jakie mogą być jego pozytywne zastosowania i inne zalety konkretnie w Veloce.
+Prezentacja na temat Gita musi być na tyle prosta, na ile to tylko możliwe. Bardzo ważne będzie przedstawienie zalet Gita, porównać go z SVNem, i wypunktować jakie mogą być jego pozytywne zastosowania i inne zalety.
 
 Plan podstawowy:
 
@@ -74,7 +74,7 @@ Proponuję Selfbilling + schedule, bo tam pracują gitowcy którzy szybko wyłap
 
 ## Przyszłe możliwości
 
-- [ ]  Jenkins
-- [ ]  Przeniesienie sql do plików
-- [ ]  testy
-- [ ]  CI/CD
+-   Jenkins
+-   Przeniesienie sql do plików
+-   testy
+-   CI/CD
