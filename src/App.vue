@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <app-header></app-header>
-    <app-git-presentation></app-git-presentation>
+    <v-app id="inspire">
+      <app-header></app-header>
+      <app-git-presentation></app-git-presentation>
+    </v-app>
   </div>
 </template>
 
