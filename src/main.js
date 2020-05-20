@@ -3,7 +3,7 @@ import App from './App.vue'
 import VueRouter from 'vue-router'
 import { routes } from './router.js'
 // import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
-import Vuetify from 'vuetify'
+import Vuetify from '@/plugins/vuetify'
 
 // Vue.use(BootstrapVue)
 // Vue.use(IconsPlugin)
@@ -32,6 +32,7 @@ const router = new VueRouter({
 
 
 new Vue({
+  Vuetify,
   router,
   render: h => h(App),
 }).$mount('#app')
