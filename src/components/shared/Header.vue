@@ -1,5 +1,18 @@
 <template>
-  <div id="header">
+  <v-app-bar
+    app>
+    <v-container>
+    <v-row>
+      <v-col cols="2">
+        <v-img max-height="100%" contain :src="image_src" id="site-logo"></v-img>
+      </v-col>
+      <v-col cols=10>
+        <v-btn text>test</v-btn>
+      </v-col>
+    </v-row>
+    </v-container>
+  </v-app-bar>
+  <!-- <div id="header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand ml-5 mr-5" href="#"><img src="../../assets/shared/header/logo.png" alt="Life-Coder.pl logo file"></a>
       <button
@@ -25,25 +38,20 @@
         </ul>
       </div>
     </nav>
-  </div>
+  </div> -->
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Header",
+  data(){
+    return {
+      image_src: require("../../assets/shared/header/logo.png")
+    }
+  }
+};
 </script>
 
 <style scoped>
-#header {
-  position: sticky;
-}
 
-.navbar-brand {
-  width: 12%;
-  /* margin-left: 5%;
-  margin-right: 5%; */
-}
-
-img {
-  width: 100%;
-}
 </style>
