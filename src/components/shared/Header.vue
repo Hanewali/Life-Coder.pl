@@ -1,12 +1,16 @@
 <template>
-  <v-app-bar app flat>
+  <v-app-bar app flat absolute>
     <v-container>
       <v-row>
         <v-col cols="2">
+          <router-link to="/" tag="a">
           <v-toolbar-title id="header-title">Life-Coder.pl</v-toolbar-title>
+          </router-link>
         </v-col>
         <v-col cols="1">
+          <router-link to="/" tag="a">
           <v-btn text>Home</v-btn>
+          </router-link>
         </v-col>
         <v-col cols=1>
           <v-btn text>Kontakt</v-btn>

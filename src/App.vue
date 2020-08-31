@@ -2,11 +2,12 @@
   <div id="app">
     <v-app>
         <app-header></app-header>
+        <router-view></router-view>
     </v-app>
   </div>
 </template>
 
-<script>
+// <script>
 import Header from './components/shared/Header'
 
 export default {
